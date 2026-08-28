@@ -370,11 +370,12 @@ EPUs: A Mixed-Frequency Shrinkage Combination Approach</h2>
 </div>
 <div id="repository-structure" class="section level2">
 <h2>🗂️ Repository Structure</h2>
-<pre><code>combining_var_es_mcs_combinations/
+<pre><code>epu_shrinkage_combination/
+├── BBG Tickers.xlsx                      # Bloomberg tickers for the 50 state-level stock market indices
 ├── README.md
 ├── README.html
-├── main_reproducibility.R                         # Replicates the entire workflow
-└── comb_functions.R                               # core functions
+├── main_reproducibility.R                # Replicates the entire workflow
+└── comb_functions.R                      # core functions
 </code></pre>
 <hr />
 </div>
@@ -536,9 +537,13 @@ capitalization-weighted stock market indices used in the paper, covering
 the 50 U.S. states. Due to differences in data availability, the
 starting date of the series varies across states, while the sample ends
 in December 2024.</p>
-<p>For full replication, users should provide the file
-<code>close_new.csv</code> in the working directory. The expected
-structure is:</p>
+<p>The file <code>BBG Tickers.xlsx</code>, included in this repository,
+reports the Bloomberg tickers for the 50 state-level stock market
+indices used in the paper. Users with access to Bloomberg can use these
+tickers to retrieve the corresponding daily closing-price series.</p>
+<p>For full replication, the downloaded series should be organized in a
+file named <code>close_new.csv</code> and placed in the working
+directory. The expected structure is:</p>
 <ul>
 <li>the first column contains dates in <code>dd/mm/yyyy</code>
 format;</li>
@@ -567,20 +572,22 @@ instructions, are reported in <code>main_reproducibility.R</code>.</li>
 forecast combination, and evaluation)</strong>
 <ul>
 <li>Replication of the full empirical analysis additionally requires the
-proprietary Bloomberg state-level stock market data described above.
-Users with access to these data should place <code>close_new.csv</code>
-in the working directory, following the structure specified in
-<code>main_reproducibility.R</code>.</li>
+proprietary Bloomberg state-level stock market data described above. The
+file <code>BBG Tickers.xlsx</code>, included in this repository,
+provides the Bloomberg tickers required to retrieve these data. Users
+should organize the downloaded data as described in the
+<strong>Data</strong> section above and place <code>close_new.csv</code>
+in the working directory.</li>
 <li>The script then performs the complete workflow, including the
 rolling estimation of the individual models, construction of the
 forecast combinations, and out-of-sample forecast evaluation.</li>
-<li>This stage is computationally intensive. Since models are estimated
+<li><h2 id="this-stage-is-computationally-intensive.-since-models-are-estimated-independently-across-states-users-may-split-the-estimation-across-subsets-of-states-andor-multiple-r-sessions-or-machines-to-reduce-the-overall-computation-time.">This
+stage is computationally intensive. Since models are estimated
 independently across states, users may split the estimation across
 subsets of states and/or multiple R sessions or machines to reduce the
-overall computation time.</li>
+overall computation time.</h2></li>
 </ul></li>
 </ol>
-<hr />
 </div>
 <div id="hardware-and-expected-runtime" class="section level2">
 <h2>⏱️ Hardware and Expected Runtime</h2>

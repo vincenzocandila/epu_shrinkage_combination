@@ -23,11 +23,12 @@ Candila V., Cepni O., Gallo G.M. & R. Gupta (2026),
 ## 🗂️ Repository Structure
 
 ```
-combining_var_es_mcs_combinations/
+epu_shrinkage_combination/
+├── BBG Tickers.xlsx                      # Bloomberg tickers for the 50 state-level stock market indices
 ├── README.md
 ├── README.html
-├── main_reproducibility.R                         # Replicates the entire workflow
-└── comb_functions.R                               # core functions
+├── comb_functions.R                      # core functions
+└── main_reproducibility.R                # Replicates the entire workflow
 
 ```
 
@@ -101,7 +102,9 @@ The state-level stock market data used in this reproducibility check were obtain
 
 The dataset contains daily closing prices for the state-level capitalization-weighted stock market indices used in the paper, covering the 50 U.S. states. Due to differences in data availability, the starting date of the series varies across states, while the sample ends in December 2024.
 
-For full replication, users should provide the file `close_new.csv` in the working directory. The expected structure is:
+The file `BBG Tickers.xlsx`, included in this repository, reports the Bloomberg tickers for the 50 state-level stock market indices used in the paper. Users with access to Bloomberg can use these tickers to retrieve the corresponding daily closing-price series.
+
+For full replication, the downloaded series should be organized in a file named `close_new.csv` and placed in the working directory. The expected structure is:
 
 - the first column contains dates in `dd/mm/yyyy` format;
 - the remaining 50 columns contain the daily closing prices of the state-level indices, ordered alphabetically by state name.
@@ -120,11 +123,9 @@ The replication workflow is organized into two main stages:
    - These results can be replicated using exclusively publicly available data. All required datasets, together with their sources and download instructions, are reported in `main_reproducibility.R`.
 
 2. **Replication of the full empirical analysis (estimation, forecast combination, and evaluation)**
-   - Replication of the full empirical analysis additionally requires the proprietary Bloomberg state-level stock market data described above. Users with access to these data should place `close_new.csv` in the working directory, following the structure specified in `main_reproducibility.R`.
+   - Replication of the full empirical analysis additionally requires the proprietary Bloomberg state-level stock market data described above. The file `BBG Tickers.xlsx`, included in this repository, provides the Bloomberg tickers required to retrieve these data. Users should organize the downloaded data as described in the **Data** section above and place `close_new.csv` in the working directory.
    - The script then performs the complete workflow, including the rolling estimation of the individual models, construction of the forecast combinations, and out-of-sample forecast evaluation.
    - This stage is computationally intensive. Since models are estimated independently across states, users may split the estimation across subsets of states and/or multiple R sessions or machines to reduce the overall computation time.
-
-
 ---
 
 ## ⏱️ Hardware and Expected Runtime
