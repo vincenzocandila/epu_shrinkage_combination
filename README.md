@@ -98,16 +98,16 @@ No environment manager (e.g., `renv`) was used. To record a snapshot of your ins
 
 ## 💾 Data
 
-The state-level stock market data used in this reproducibility check were obtained from Bloomberg (https://www.bloomberg.com/professional/) and are subject to licensing and copyright restrictions. Therefore, these data cannot be redistributed as part of the replication package and must be obtained independently by users with access to Bloomberg.
+The daily closing prices of the state-level equity indices used in this paper were obtained from Bloomberg (https://www.bloomberg.com/professional/) and are subject to licensing and copyright restrictions. Therefore, these data cannot be redistributed as part of the replication package and must be obtained independently by users with access to Bloomberg.
 
-The dataset contains daily closing prices for the state-level capitalization-weighted stock market indices used in the paper, covering the 50 U.S. states. Due to differences in data availability, the starting date of the series varies across states, while the sample ends in December 2024.
+The dataset covers capitalization-weighted equity indices for the 50 U.S. states. Due to differences in data availability, the starting date of the series varies across states, while the sample ends in December 2024.
 
-The file `BBG Tickers.xlsx`, included in this repository, reports the Bloomberg tickers for the 50 state-level stock market indices used in the paper. Users with access to Bloomberg can use these tickers to retrieve the corresponding daily closing-price series.
+The file `BBG Tickers.xlsx`, included in this repository, reports the Bloomberg tickers for the 50 state-level equity indices used in the paper. Users with access to Bloomberg can use these tickers to retrieve the corresponding daily closing-price series.
 
 For full replication, the downloaded series should be organized in a file named `close_new.csv` and placed in the working directory. The expected structure is:
 
 - the first column contains dates in `dd/mm/yyyy` format;
-- the remaining 50 columns contain the daily closing prices of the state-level indices, ordered alphabetically by state name.
+- the remaining 50 columns contain the daily closing prices of the state-level equity indices, ordered alphabetically by state name.
 
 The empirical analysis reported in the paper is based on the Bloomberg data downloaded in March 2025.
 

@@ -374,8 +374,8 @@ EPUs: A Mixed-Frequency Shrinkage Combination Approach</h2>
 ├── BBG Tickers.xlsx                      # Bloomberg tickers for the 50 state-level stock market indices
 ├── README.md
 ├── README.html
-├── main_reproducibility.R                # Replicates the entire workflow
-└── comb_functions.R                      # core functions
+├── comb_functions.R                      # core functions
+└── main_reproducibility.R                # Replicates the entire workflow
 </code></pre>
 <hr />
 </div>
@@ -527,20 +527,19 @@ R after installing the packages.</p>
 </div>
 <div id="data" class="section level2">
 <h2>💾 Data</h2>
-<p>The state-level stock market data used in this reproducibility check
-were obtained from Bloomberg (<a href="https://www.bloomberg.com/professional/" class="uri">https://www.bloomberg.com/professional/</a>) and are subject
+<p>The daily closing prices of the state-level equity indices used in
+this paper were obtained from Bloomberg (<a href="https://www.bloomberg.com/professional/" class="uri">https://www.bloomberg.com/professional/</a>) and are subject
 to licensing and copyright restrictions. Therefore, these data cannot be
 redistributed as part of the replication package and must be obtained
 independently by users with access to Bloomberg.</p>
-<p>The dataset contains daily closing prices for the state-level
-capitalization-weighted stock market indices used in the paper, covering
-the 50 U.S. states. Due to differences in data availability, the
-starting date of the series varies across states, while the sample ends
-in December 2024.</p>
+<p>The dataset covers capitalization-weighted equity indices for the 50
+U.S. states. Due to differences in data availability, the starting date
+of the series varies across states, while the sample ends in December
+2024.</p>
 <p>The file <code>BBG Tickers.xlsx</code>, included in this repository,
-reports the Bloomberg tickers for the 50 state-level stock market
-indices used in the paper. Users with access to Bloomberg can use these
-tickers to retrieve the corresponding daily closing-price series.</p>
+reports the Bloomberg tickers for the 50 state-level equity indices used
+in the paper. Users with access to Bloomberg can use these tickers to
+retrieve the corresponding daily closing-price series.</p>
 <p>For full replication, the downloaded series should be organized in a
 file named <code>close_new.csv</code> and placed in the working
 directory. The expected structure is:</p>
@@ -548,7 +547,7 @@ directory. The expected structure is:</p>
 <li>the first column contains dates in <code>dd/mm/yyyy</code>
 format;</li>
 <li>the remaining 50 columns contain the daily closing prices of the
-state-level indices, ordered alphabetically by state name.</li>
+state-level equity indices, ordered alphabetically by state name.</li>
 </ul>
 <p>The empirical analysis reported in the paper is based on the
 Bloomberg data downloaded in March 2025.</p>
